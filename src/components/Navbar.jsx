@@ -11,20 +11,19 @@ import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
-  <TooltipComponent content ={title} position="BottomCenter">
+  <TooltipComponent content={title} position="BottomCenter">
     <button type="button" onClick={customFunc} style={{ color }}
     className="relative text-xl rounded-full p-2 hover:bg-light-gray"
     >
       <span style={{ background: dotColor }}
       className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-      >
+       />
         {icon}
-      </span>
     </button>
   </TooltipComponent>
 )
 
-const Navbar = () => {
+const Navbar=() => {
   const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
 
   useEffect(() => {
@@ -44,7 +43,7 @@ useEffect(() => {
   } else {
     setActiveMenu(true)
   }
-})
+}, [screenSize]);
   
   return (
     <div className="flex justify-between p-2 
@@ -89,7 +88,7 @@ useEffect(() => {
               hover:bg-light-gray rounded-lg"
               onClick={() => handleClick('userProfile')}>
                 <img 
-                className="rounded-full w-20 h-80"
+                className="rounded-full w-8 h-8"
                 src={avatar} 
               />
                 <p>

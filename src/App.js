@@ -47,11 +47,9 @@ const App = () => {
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-pg navbar w-full">
              <Navbar />
             </div>
-          </div>
 
           <div>
-            
-          <Routes>
+            <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<ECommerce />)} />
                 <Route path="/ecommerce" element={(<ECommerce />)} />
@@ -78,6 +76,7 @@ const App = () => {
                 <Route path="/stacked" element={<Stacked />} />
 
               </Routes>
+          </div>
         </div>
         </div>
       </BrowserRouter>
